@@ -3,171 +3,625 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cristhian Castro – Desarrollador</title>
-
-  <!-- Fuente moderna desde Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Íconos Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Estilos propios -->
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Inteligencia Artificial en la Educación - Proyecto académico sobre el impacto de la IA en el aprendizaje moderno." />
+  <meta name="keywords" content="inteligencia artificial, educación, IA, aprendizaje, tecnología, ChatGPT, Gemini, Claude" />
+  <meta name="author" content="Proyecto Académico - Vibe Coding" />
+  <title>IA en la Educación | Construyendo mi Primera Web</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ══════════════════════════════════════
-       CANVAS: Fondo de partículas animadas
-  ══════════════════════════════════════ -->
-  <canvas id="particles-canvas"></canvas>
-
-  <!-- ══════════════════════════════════════
-       NAVBAR: Menú de navegación fijo
-  ══════════════════════════════════════ -->
-  <nav class="navbar" id="navbar">
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
     <div class="nav-container">
-      <!-- Logo / nombre corto -->
-      <a href="#inicio" class="nav-logo">
-        <span class="logo-bracket">&lt;</span>CC<span class="logo-bracket">/&gt;</span>
+      <a href="#inicio" class="nav-logo" aria-label="Inicio">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">IA<span class="logo-accent">Edu</span></span>
       </a>
-
-      <!-- Botón hamburguesa para móviles -->
-      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
-
-      <!-- Links de navegación -->
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#inicio"        class="nav-link active">Inicio</a></li>
-        <li><a href="#sobre-mi"      class="nav-link">Sobre mí</a></li>
-        <li><a href="#entretenimiento" class="nav-link">Entretenimiento</a></li>
-        <li><a href="#estudios"      class="nav-link">Estudios</a></li>
-        <li><a href="#contacto"      class="nav-link">Contacto</a></li>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+        <li><a href="#que-es-ia" class="nav-link">¿Qué es IA?</a></li>
+        <li><a href="#beneficios" class="nav-link">Beneficios</a></li>
+        <li><a href="#herramientas" class="nav-link">Herramientas</a></li>
+        <li><a href="#galeria" class="nav-link">Galería</a></li>
+        <li><a href="#video" class="nav-link">Video</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
       </ul>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </nav>
 
-  <!-- ══════════════════════════════════════
-       HERO: Sección principal / portada
-  ══════════════════════════════════════ -->
-  <section class="hero" id="inicio">
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="inicio" aria-label="Sección principal">
+    <!-- Background decorative elements -->
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb--1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb--2" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb--3" aria-hidden="true"></div>
+
     <div class="hero-content">
-
-      <!-- Foto personal -->
-      <div class="hero-photo-wrapper">
-        <div class="photo-ring ring-1"></div>
-        <div class="photo-ring ring-2"></div>
-        <div class="photo-ring ring-3"></div>
-        <div class="hero-photo">
-          <!--
-            ════════════════════════════════════════
-            REEMPLAZA ESTA IMAGEN EN VS CODE:
-            Cambia src="TU_FOTO.jpg" y borra el div
-            de placeholder que está dentro del div.hero-photo
-            ════════════════════════════════════════
-          -->
-          <div class="photo-placeholder">
-           <img src="Imagen.jpeg" alt="Foto ">
-            <small>Reemplaza en VS Code</small>
-          </div>
-          <!-- Descomenta la línea de abajo y pon tu foto: -->
-          <!-- <img src="TU_FOTO.jpg" alt="Foto de Cristhian Castro" /> -->
+      <div class="hero-badge animate-fade-up">
+        <span>🎓</span> Proyecto Académico · Vibe Coding
+      </div>
+      <h1 class="hero-title animate-fade-up">
+        La <span class="text-gradient">Inteligencia Artificial</span><br/>
+        Transforma la Educación
+      </h1>
+      <p class="hero-subtitle animate-fade-up">
+        Descubre cómo la IA está revolucionando el aprendizaje, potenciando a estudiantes y docentes, y construyendo el futuro de la educación digital.
+      </p>
+      <div class="hero-actions animate-fade-up">
+        <a href="#que-es-ia" class="btn btn-primary">
+          Explorar Más
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#video" class="btn btn-ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5,3 19,12 5,21"/></svg>
+          Ver Video
+        </a>
+      </div>
+      <!-- Floating stats -->
+      <div class="hero-stats animate-fade-up">
+        <div class="hero-stat">
+          <span class="stat-num">95%</span>
+          <span class="stat-label">Adopción estudiantil</span>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat">
+          <span class="stat-num">3x</span>
+          <span class="stat-label">Mayor productividad</span>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat">
+          <span class="stat-num">2030</span>
+          <span class="stat-label">Futuro educativo</span>
         </div>
       </div>
-
-      <!-- Texto de presentación -->
-      <div class="hero-text">
-        <p class="hero-greeting">Hola, soy</p>
-        <h1 class="hero-name">Cristhian<br /><span class="name-highlight">Castro</span></h1>
-        <div class="hero-typewriter">
-          <span id="typewriter-text"></span><span class="cursor">|</span>
-        </div>
-        <p class="hero-tagline">Apasionado por la tecnología y el desarrollo de software.</p>
-        <div class="hero-buttons">
-          <a href="#sobre-mi"  class="btn btn-primary">Conóceme <i class="fa-solid fa-arrow-down"></i></a>
-          <a href="#contacto"  class="btn btn-outline">Contacto  <i class="fa-solid fa-envelope"></i></a>
-        </div>
-      </div>
-
     </div>
 
-    <!-- Indicador de scroll -->
-    <div class="scroll-indicator">
+    <!-- Hero visual -->
+    <div class="hero-visual animate-fade-left" aria-hidden="true">
+      <div class="hero-image-wrapper">
+        <div class="hero-image-bg"></div>
+        <img
+          src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80"
+          alt="Inteligencia Artificial y Educación - Ilustración de tecnología y aprendizaje"
+          class="hero-img"
+          loading="eager"
+        />
+        <!-- Floating cards -->
+        <div class="float-card float-card--1">
+          <span class="float-card-icon">🤖</span>
+          <div>
+            <strong>IA Activa</strong>
+            <small>Aprendiendo contigo</small>
+          </div>
+        </div>
+        <div class="float-card float-card--2">
+          <span class="float-card-icon">📈</span>
+          <div>
+            <strong>+40% rendimiento</strong>
+            <small>Con aprendizaje adaptativo</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
       <div class="scroll-dot"></div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       SOBRE MÍ
-  ══════════════════════════════════════ -->
-  <section class="section" id="sobre-mi">
+  <!-- ========== ¿QUÉ ES IA? ========== -->
+  <section class="section" id="que-es-ia" aria-labelledby="heading-ia">
     <div class="container">
-      <h2 class="section-title">
-        <span class="title-icon"><i class="fa-solid fa-user-astronaut"></i></span>
-        Sobre mí
-      </h2>
-      <div class="about-card glass-card">
-        <div class="about-grid">
-          <!-- Tarjetas de datos personales -->
-          <div class="about-info">
-            <div class="info-chip">
-              <i class="fa-solid fa-cake-candles chip-icon"></i>
-              <div>
-                <span class="chip-label">Edad</span>
-                <span class="chip-value">18 años</span>
-              </div>
-            </div>
-            <div class="info-chip">
-              <i class="fa-solid fa-calendar chip-icon"></i>
-              <div>
-                <span class="chip-label">Fecha de nacimiento</span>
-                <span class="chip-value">05 – 10 – 2007</span>
-              </div>
-            </div>
-            <div class="info-chip">
-              <i class="fa-solid fa-graduation-cap chip-icon"></i>
-              <div>
-                <span class="chip-label">Carrera</span>
-                <span class="chip-value">Licenciatura en Sistemas y Programación</span>
-              </div>
-            </div>
-            <div class="info-chip">
-              <i class="fa-solid fa-location-dot chip-icon"></i>
-              <div>
-                <span class="chip-label">País</span>
-                <span class="chip-value">Panamá 🇵🇦</span>
-              </div>
-            </div>
-          </div>
+      <div class="section-header reveal">
+        <div class="section-badge">Fundamentos</div>
+        <h2 class="section-title" id="heading-ia">¿Qué es la Inteligencia Artificial?</h2>
+        <p class="section-subtitle">Una tecnología que simula el pensamiento humano para resolver problemas complejos</p>
+      </div>
 
-          <!-- Párrafo biográfico -->
-          <div class="about-bio">
+      <div class="ia-grid">
+        <!-- Main explanation card -->
+        <div class="ia-main-card reveal">
+          <div class="ia-main-img">
+            <img
+              src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80"
+              alt="Robot y humano interactuando - representación de la Inteligencia Artificial"
+              loading="lazy"
+            />
+            <div class="ia-main-img-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="ia-main-content">
+            <h3>Definición</h3>
             <p>
-              Tengo <strong>18 años</strong> y nací el <strong>05-10-2007</strong>. Actualmente estoy cursando
-              la <strong>Licenciatura en Sistemas y Programación</strong>.
+              La <strong>Inteligencia Artificial (IA)</strong> es una rama de la informática que busca crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, como razonamiento, aprendizaje, percepción del lenguaje y toma de decisiones.
             </p>
             <p>
-              Me apasiona la tecnología y el desarrollo de software. Disfruto aprender nuevas
-              herramientas, construir proyectos digitales y mejorar cada día mis habilidades
-              como programador.
+              Desde los asistentes virtuales hasta los motores de recomendación, la IA ya es parte de nuestra vida cotidiana y está transformando radicalmente la forma en que aprendemos.
             </p>
-            <p>
-              Creo que la tecnología tiene el poder de transformar vidas, y quiero ser parte
-              de ese cambio desde Panamá hacia el mundo.
-            </p>
-            <!-- Barra de habilidades decorativa -->
-            <div class="skill-bars">
-              <div class="skill-item">
-                <span class="skill-name">HTML / CSS</span>
-                <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            <a href="https://es.wikipedia.org/wiki/Inteligencia_artificial" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+              Leer más
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Info cards column -->
+        <div class="ia-cards-col">
+          <div class="info-card reveal">
+            <div class="info-card-icon" aria-hidden="true">🧠</div>
+            <div>
+              <h4>Machine Learning</h4>
+              <p>Algoritmos que aprenden patrones a partir de grandes volúmenes de datos sin ser programados explícitamente.</p>
+            </div>
+          </div>
+          <div class="info-card reveal">
+            <div class="info-card-icon" aria-hidden="true">💬</div>
+            <div>
+              <h4>Procesamiento del Lenguaje</h4>
+              <p>Permite a las máquinas comprender, interpretar y generar texto humano con gran precisión.</p>
+            </div>
+          </div>
+          <div class="info-card reveal">
+            <div class="info-card-icon" aria-hidden="true">👁️</div>
+            <div>
+              <h4>Visión por Computadora</h4>
+              <p>Capacidad de identificar y procesar imágenes y vídeos de la misma forma que lo hace el ojo humano.</p>
+            </div>
+          </div>
+          <div class="info-card reveal">
+            <div class="info-card-icon" aria-hidden="true">🎯</div>
+            <div>
+              <h4>Aprendizaje Adaptativo</h4>
+              <p>Sistemas que personalizan el contenido educativo según el ritmo y estilo de aprendizaje de cada estudiante.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BENEFICIOS ========== -->
+  <section class="section section--alt" id="beneficios" aria-labelledby="heading-beneficios">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Impacto</div>
+        <h2 class="section-title" id="heading-beneficios">Beneficios en la Educación</h2>
+        <p class="section-subtitle">Cómo la IA está mejorando la experiencia de aprendizaje para todos</p>
+      </div>
+
+      <div class="benefits-grid">
+        <article class="benefit-card reveal" aria-label="Aprendizaje personalizado">
+          <div class="benefit-card-header">
+            <div class="benefit-icon" aria-hidden="true">🎯</div>
+            <div class="benefit-number" aria-hidden="true">01</div>
+          </div>
+          <h3>Aprendizaje Personalizado</h3>
+          <p>La IA adapta el contenido al ritmo y estilo único de cada estudiante, maximizando la comprensión y retención.</p>
+          <div class="benefit-tag">Para estudiantes</div>
+        </article>
+
+        <article class="benefit-card reveal" aria-label="Automatización de tareas">
+          <div class="benefit-card-header">
+            <div class="benefit-icon" aria-hidden="true">⚡</div>
+            <div class="benefit-number" aria-hidden="true">02</div>
+          </div>
+          <h3>Automatización de Tareas</h3>
+          <p>Docentes pueden automatizar la corrección de exámenes, generación de reportes y planificación curricular.</p>
+          <div class="benefit-tag">Para docentes</div>
+        </article>
+
+        <article class="benefit-card reveal" aria-label="Mayor productividad">
+          <div class="benefit-card-header">
+            <div class="benefit-icon" aria-hidden="true">🚀</div>
+            <div class="benefit-number" aria-hidden="true">03</div>
+          </div>
+          <h3>Mayor Productividad</h3>
+          <p>Herramientas de IA reducen el tiempo invertido en tareas repetitivas, liberando tiempo para la creatividad.</p>
+          <div class="benefit-tag">Para todos</div>
+        </article>
+
+        <article class="benefit-card reveal" aria-label="Acceso rápido a información">
+          <div class="benefit-card-header">
+            <div class="benefit-icon" aria-hidden="true">🔍</div>
+            <div class="benefit-number" aria-hidden="true">04</div>
+          </div>
+          <h3>Acceso Rápido a Información</h3>
+          <p>Búsqueda inteligente y síntesis de información de múltiples fuentes en segundos, con precisión mejorada.</p>
+          <div class="benefit-tag">Para estudiantes</div>
+        </article>
+
+        <article class="benefit-card reveal" aria-label="Apoyo al docente">
+          <div class="benefit-card-header">
+            <div class="benefit-icon" aria-hidden="true">👨‍🏫</div>
+            <div class="benefit-number" aria-hidden="true">05</div>
+          </div>
+          <h3>Apoyo al Docente</h3>
+          <p>Asistentes IA ayudan a crear materiales educativos, detectar dificultades de aprendizaje y dar retroalimentación.</p>
+          <div class="benefit-tag">Para docentes</div>
+        </article>
+
+        <article class="benefit-card reveal" aria-label="Inclusión educativa">
+          <div class="benefit-card-header">
+            <div class="benefit-icon" aria-hidden="true">🌍</div>
+            <div class="benefit-number" aria-hidden="true">06</div>
+          </div>
+          <h3>Inclusión Educativa</h3>
+          <p>Herramientas de traducción, lectura de texto y adaptación de contenidos hacen la educación más accesible.</p>
+          <div class="benefit-tag">Para todos</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ESTADÍSTICAS ========== -->
+  <section class="section section--stats" aria-labelledby="heading-stats">
+    <div class="stats-bg-overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge section-badge--light">Datos</div>
+        <h2 class="section-title section-title--light" id="heading-stats">IA en Números</h2>
+        <p class="section-subtitle section-subtitle--light">El impacto real de la tecnología en la educación global</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card reveal" role="figure" aria-label="95% de estudiantes usan tecnología">
+          <div class="stat-icon" aria-hidden="true">📱</div>
+          <div class="stat-counter" data-target="95" data-suffix="%">0%</div>
+          <p class="stat-desc">Estudiantes que usan tecnología educativa</p>
+        </div>
+        <div class="stat-card reveal" role="figure" aria-label="80% aprendizaje digital">
+          <div class="stat-icon" aria-hidden="true">💡</div>
+          <div class="stat-counter" data-target="80" data-suffix="%">0%</div>
+          <p class="stat-desc">Adopción de plataformas de aprendizaje digital</p>
+        </div>
+        <div class="stat-card reveal" role="figure" aria-label="70% automatización educativa">
+          <div class="stat-icon" aria-hidden="true">⚙️</div>
+          <div class="stat-counter" data-target="70" data-suffix="%">0%</div>
+          <p class="stat-desc">Tareas educativas automatizables con IA</p>
+        </div>
+        <div class="stat-card reveal" role="figure" aria-label="90% acceso a recursos en línea">
+          <div class="stat-icon" aria-hidden="true">🌐</div>
+          <div class="stat-counter" data-target="90" data-suffix="%">0%</div>
+          <p class="stat-desc">Acceso a recursos educativos en línea</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HERRAMIENTAS ========== -->
+  <section class="section" id="herramientas" aria-labelledby="heading-herramientas">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Tecnología</div>
+        <h2 class="section-title" id="heading-herramientas">Herramientas de IA Populares</h2>
+        <p class="section-subtitle">Las plataformas más utilizadas en el ámbito educativo actual</p>
+      </div>
+      <div class="tools-grid">
+
+        <article class="tool-card reveal" aria-label="ChatGPT de OpenAI">
+          <div class="tool-card-img">
+            <img
+              src="https://cloudpng.com/images/all_img/1750845599_chatgpt-logo-png.png"
+              alt="Logo de ChatGPT"
+              loading="lazy"
+            />
+          </div>
+          <div class="tool-card-body">
+            <h3>ChatGPT</h3>
+            <span class="tool-badge">OpenAI</span>
+            <p>Asistente conversacional de última generación que responde preguntas, genera textos, explica conceptos y ayuda en tareas académicas.</p>
+            <a href="https://chat.openai.com" class="btn btn-tool" target="_blank" rel="noopener noreferrer">
+              Más información
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="tool-card reveal" aria-label="Gemini de Google">
+          <div class="tool-card-img">
+            <img
+              src="https://logos-world.net/wp-content/uploads/2025/08/Gemini-Logo-New.png"
+              alt="Logo de Gemini"
+              loading="lazy"
+            />
+          </div>
+          <div class="tool-card-body">
+            <h3>Gemini</h3>
+            <span class="tool-badge">Google</span>
+            <p>Modelo multimodal de Google que combina texto, imágenes y razonamiento avanzado integrado en el ecosistema educativo de Google.</p>
+            <a href="https://gemini.google.com" class="btn btn-tool" target="_blank" rel="noopener noreferrer">
+              Más información
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="tool-card reveal" aria-label="Claude de Anthropic">
+          <div class="tool-card-img">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/0/06/Claude_AI_logo.png"
+              alt="Logo de Claude AI"
+              loading="lazy"
+            />
+          </div>
+          <div class="tool-card-body">
+            <span class="tool-badge">Claude</span>
+            <p>Asistente IA diseñado con enfoque en seguridad y utilidad, ideal para análisis profundos, escritura académica y razonamiento complejo.</p>
+            <a href="https://claude.ai" class="btn btn-tool" target="_blank" rel="noopener noreferrer">
+              Más información
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="tool-card reveal" aria-label="Microsoft Copilot">
+          <div class="tool-card-img">
+            <img
+              src="https://itconfidence.co.nz/wp-content/uploads/2024/02/copilot-logo-300x279.png"
+              alt="Logo de Microsoft Copilot"
+              loading="lazy"
+            />
+          </div>
+          <div class="tool-card-body">
+            <h3>Copilot</h3>
+            <span class="tool-badge">Microsoft</span>
+            <p>Integrado en Microsoft 365, asiste en la creación de documentos, presentaciones y hojas de cálculo con inteligencia artificial.</p>
+            <a href="https://copilot.microsoft.com" class="btn btn-tool" target="_blank" rel="noopener noreferrer">
+              Más información
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="tool-card reveal" aria-label="Canva AI">
+          <div class="tool-card-img">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/032/329/171/non_2x/canva-icon-logo-symbol-free-png.png"
+              alt="Logo de Canva"
+              loading="lazy"
+            />
+          </div>
+          <div class="tool-card-body">
+            <h3>Canva AI</h3>
+            <span class="tool-badge">Canva AI</span>
+            <p>Herramienta de diseño potenciada por IA que genera presentaciones, infografías y materiales visuales educativos de forma sencilla.</p>
+            <a href="https://www.canva.com/ai-image-generator/" class="btn btn-tool" target="_blank" rel="noopener noreferrer">
+              Más información
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="tool-card reveal" aria-label="Grammarly">
+          <div class="tool-card-img">
+            <img
+              src="https://logos-world.net/wp-content/uploads/2024/08/Grammarly-Logo.png"
+              alt="Logo de Grammarly"
+              loading="lazy"
+            />
+          </div>
+          <div class="tool-card-body">
+            <h3>Grammarly</h3>
+            <span class="tool-badge">Grammarly Inc.</span>
+            <p>Asistente de escritura con IA que corrige gramática, mejora el estilo y la claridad de textos académicos en múltiples idiomas.</p>
+            <a href="https://www.grammarly.com" class="btn btn-tool" target="_blank" rel="noopener noreferrer">
+              Más información
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALERÍA ========== -->
+  <section class="section section--alt" id="galeria" aria-labelledby="heading-galeria">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Visuales</div>
+        <h2 class="section-title" id="heading-galeria">Galería de Imágenes</h2>
+        <p class="section-subtitle">Un vistazo al mundo de la tecnología y la educación del futuro</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item gallery-item--wide reveal" aria-label="Tecnología e IA">
+          <img
+            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80"
+            alt="Robot futurista representando Inteligencia Artificial"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">
+            <span class="gallery-tag">Tecnología</span>
+            Inteligencia Artificial
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" aria-label="Educación digital">
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80"
+            alt="Estudiante usando tecnología en su aprendizaje"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">
+            <span class="gallery-tag">Educación</span>
+            Aprendizaje Digital
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" aria-label="Programación y código">
+          <img
+            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80"
+            alt="Código de programación en pantalla"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">
+            <span class="gallery-tag">Programación</span>
+            Desarrollo de Software
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" aria-label="Estudiantes colaborando">
+          <img
+            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80"
+            alt="Grupo de estudiantes colaborando con tecnología"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">
+            <span class="gallery-tag">Estudiantes</span>
+            Aprendizaje Colaborativo
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item gallery-item--tall reveal" aria-label="Innovación tecnológica">
+          <img
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80"
+            alt="Globo terráqueo digital representando la innovación tecnológica"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">
+            <span class="gallery-tag">Innovación</span>
+            Conectividad Global
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item reveal" aria-label="IA y redes neuronales">
+          <img
+            src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80"
+            alt="Redes neuronales artificiales - visualización de IA"
+            loading="lazy"
+          />
+          <figcaption class="gallery-caption">
+            <span class="gallery-tag">IA</span>
+            Redes Neuronales
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VIDEO ========== -->
+  <section class="section" id="video" aria-labelledby="heading-video">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Multimedia</div>
+        <h2 class="section-title" id="heading-video">Video Educativo</h2>
+        <p class="section-subtitle">Aprende más sobre el impacto de la IA en la educación</p>
+      </div>
+      <div class="video-wrapper reveal">
+        <div class="video-card">
+          <div class="video-card-header">
+            <span class="video-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5,3 19,12 5,21"/></svg>
+              Video Educativo
+            </span>
+            <h3>Inteligencia Artificial en la Educación: El Futuro del Aprendizaje</h3>
+            <p>Explora cómo los docentes y estudiantes están aprovechando la IA para transformar el proceso educativo en todo el mundo.</p>
+          </div>
+          <div class="video-responsive" role="region" aria-label="Video de YouTube sobre IA en educación">
+            <iframe
+              src="https://www.youtube.com/embed/YZzB1Uca7n0?rel=0&modestbranding=1"
+              title="Inteligencia Artificial en la Educación - Video Educativo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="video-meta">
+            <div class="video-meta-item">
+              <span>🎓</span> Contenido Educativo
+            </div>
+            <div class="video-meta-item">
+              <span>🌐</span> Subtítulos disponibles
+            </div>
+            <div class="video-meta-item">
+              <span>📖</span> Nivel: Introductorio
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FUTURO Y RECOMENDACIONES ========== -->
+  <section class="section section--alt" aria-labelledby="heading-futuro">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">Perspectivas</div>
+        <h2 class="section-title" id="heading-futuro">Futuro y Uso Responsable</h2>
+        <p class="section-subtitle">Ventajas, desafíos y recomendaciones para aprovechar la IA éticamente</p>
+      </div>
+      <div class="future-grid">
+        <div class="future-col reveal">
+          <div class="future-card future-card--pros">
+            <div class="future-card-title">
+              <span aria-hidden="true">✅</span> Ventajas
+            </div>
+            <ul class="future-list">
+              <li>Personalización del aprendizaje a escala</li>
+              <li>Feedback instantáneo y continuo</li>
+              <li>Democratización del acceso educativo</li>
+              <li>Reducción de brechas de aprendizaje</li>
+              <li>Eficiencia en la gestión académica</li>
+            </ul>
+          </div>
+        </div>
+        <div class="future-col reveal">
+          <div class="future-card future-card--cons">
+            <div class="future-card-title">
+              <span aria-hidden="true">⚠️</span> Desafíos
+            </div>
+            <ul class="future-list">
+              <li>Dependencia tecnológica excesiva</li>
+              <li>Brecha digital entre regiones</li>
+              <li>Privacidad de datos estudiantiles</li>
+              <li>Sesgo algorítmico en evaluaciones</li>
+              <li>Desinformación generada por IA</li>
+            </ul>
+          </div>
+        </div>
+        <div class="future-col future-col--full reveal">
+          <div class="future-card future-card--tips">
+            <div class="future-card-title">
+              <span aria-hidden="true">💡</span> Recomendaciones para Uso Responsable
+            </div>
+            <div class="tips-grid">
+              <div class="tip-item">
+                <span class="tip-num">1</span>
+                <div>
+                  <strong>Verifica la información</strong>
+                  <p>Siempre contrasta los datos generados por IA con fuentes confiables antes de usarlos académicamente.</p>
+                </div>
               </div>
-              <div class="skill-item">
-                <span class="skill-name">JavaScript</span>
-                <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+              <div class="tip-item">
+                <span class="tip-num">2</span>
+                <div>
+                  <strong>Cuida tu privacidad</strong>
+                  <p>No compartas datos personales sensibles en plataformas de IA y revisa las políticas de privacidad.</p>
+                </div>
               </div>
-              <div class="skill-item">
-                <span class="skill-name">Programación</span>
-                <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+              <div class="tip-item">
+                <span class="tip-num">3</span>
+                <div>
+                  <strong>Usa la IA como apoyo</strong>
+                  <p>La IA es una herramienta que amplifica tus capacidades, no las reemplaza. Desarrolla tu pensamiento crítico.</p>
+                </div>
+              </div>
+              <div class="tip-item">
+                <span class="tip-num">4</span>
+                <div>
+                  <strong>Respeta la autoría intelectual</strong>
+                  <p>Cita correctamente cuando uses contenido asistido por IA y evita el plagio académico.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -176,202 +630,160 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       MIS ENTRETENIMIENTOS
-  ══════════════════════════════════════ -->
-  <section class="section section-alt" id="entretenimiento">
+  <!-- ========== CONTACTO ========== -->
+  <section class="section" id="contacto" aria-labelledby="heading-contacto">
     <div class="container">
-      <h2 class="section-title">
-        <span class="title-icon"><i class="fa-solid fa-gamepad"></i></span>
-        Mis entretenimientos
-      </h2>
-      <p class="section-sub">Lo que disfruto en mi tiempo libre</p>
-
-      <div class="hobbies-grid">
-
-        <div class="hobby-card glass-card" data-delay="0">
-          <div class="hobby-icon-wrap">
-            <i class="fa-solid fa-film hobby-icon"></i>
+      <div class="section-header reveal">
+        <div class="section-badge">Conecta</div>
+        <h2 class="section-title" id="heading-contacto">Contáctanos</h2>
+        <p class="section-subtitle">¿Tienes preguntas o quieres colaborar? Escríbenos</p>
+      </div>
+      <div class="contact-wrapper reveal">
+        <div class="contact-info">
+          <h3>¡Hablemos!</h3>
+          <p>Este proyecto nació de la curiosidad y el deseo de explorar cómo la tecnología puede mejorar la educación. Comparte tus ideas, dudas o sugerencias.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">📧</div>
+              <div>
+                <strong>Email</strong>
+                <span>proyecto@vibecoding.edu</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">📍</div>
+              <div>
+                <strong>Ubicación</strong>
+                <span>Panamá, República de Panamá</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">🎓</div>
+              <div>
+                <strong>Proyecto Académico</strong>
+                <span>Vibe Coding · HTML5 &amp; IA</span>
+              </div>
+            </div>
           </div>
-          <h3 class="hobby-title">Ver películas</h3>
-          <p class="hobby-desc">Disfruto el cine como una ventana a otros mundos, historias y culturas.</p>
         </div>
-
-        <div class="hobby-card glass-card" data-delay="100">
-          <div class="hobby-icon-wrap">
-            <i class="fa-solid fa-torii-gate hobby-icon"></i>
+        <form class="contact-form" id="contactForm" novalidate aria-label="Formulario de contacto">
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Tu nombre"
+              autocomplete="name"
+              required
+              aria-required="true"
+            />
+            <span class="form-error" id="nombre-error" role="alert" aria-live="polite"></span>
           </div>
-          <h3 class="hobby-title">Ver anime</h3>
-          <p class="hobby-desc">El anime combina animación increíble con narrativas únicas que me enganchan.</p>
-        </div>
-
-        <div class="hobby-card glass-card" data-delay="200">
-          <div class="hobby-icon-wrap">
-            <i class="fa-solid fa-gamepad hobby-icon"></i>
+          <div class="form-group">
+            <label for="correo">Correo electrónico</label>
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              placeholder="tucorreo@ejemplo.com"
+              autocomplete="email"
+              required
+              aria-required="true"
+            />
+            <span class="form-error" id="correo-error" role="alert" aria-live="polite"></span>
           </div>
-          <h3 class="hobby-title">Videojuegos</h3>
-          <p class="hobby-desc">Los videojuegos me enseñan lógica, estrategia y trabajo en equipo.</p>
-        </div>
-
-        <div class="hobby-card glass-card" data-delay="300">
-          <div class="hobby-icon-wrap">
-            <i class="fa-solid fa-futbol hobby-icon"></i>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="4"
+              placeholder="Escribe tu mensaje aquí..."
+              required
+              aria-required="true"
+            ></textarea>
+            <span class="form-error" id="mensaje-error" role="alert" aria-live="polite"></span>
           </div>
-          <h3 class="hobby-title">Jugar fútbol</h3>
-          <p class="hobby-desc">El fútbol es energía, compañerismo y la mejor forma de despejar la mente.</p>
-        </div>
-
-        <div class="hobby-card glass-card" data-delay="400">
-          <div class="hobby-icon-wrap">
-            <i class="fa-solid fa-house-heart hobby-icon"></i>
+          <button type="submit" class="btn btn-primary btn-full">
+            Enviar Mensaje
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <div class="form-success" id="formSuccess" role="alert" aria-live="polite" aria-atomic="true" hidden>
+            <span>✅</span> ¡Mensaje enviado con éxito! Gracias por contactarnos.
           </div>
-          <h3 class="hobby-title">Mi familia</h3>
-          <p class="hobby-desc">Pasar tiempo con mi familia es lo que más valoro y disfruto de la vida.</p>
-        </div>
-
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════
-       MIS ESTUDIOS
-  ══════════════════════════════════════ -->
-  <section class="section" id="estudios">
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-bg" aria-hidden="true"></div>
     <div class="container">
-      <h2 class="section-title">
-        <span class="title-icon"><i class="fa-solid fa-book-open"></i></span>
-        Mis estudios
-      </h2>
-      <p class="section-sub">Mi trayectoria académica</p>
-
-      <!-- Línea de tiempo educativa -->
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="timeline-dot">
-            <i class="fa-solid fa-school"></i>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <span class="logo-icon">⬡</span>
+            <span class="logo-text">IA<span class="logo-accent">Edu</span></span>
           </div>
-          <div class="timeline-card glass-card">
-            <span class="timeline-badge">Primaria</span>
-            <h3 class="timeline-title">Nicanor Villalaz</h3>
-            <p class="timeline-desc">Educación primaria donde comenzó mi formación académica y personal.</p>
-            <div class="timeline-icon-big"><i class="fa-solid fa-child"></i></div>
-          </div>
+          <p>Proyecto académico que explora la intersección entre la Inteligencia Artificial y la educación moderna.</p>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot">
-            <i class="fa-solid fa-building-columns"></i>
-          </div>
-          <div class="timeline-card glass-card">
-            <span class="timeline-badge">Secundaria</span>
-            <h3 class="timeline-title">Instituto Coronel Segundo Villarreal</h3>
-            <p class="timeline-desc">Bachillerato donde desarrollé habilidades analíticas y disciplina académica.</p>
-            <div class="timeline-icon-big"><i class="fa-solid fa-user-graduate"></i></div>
-          </div>
+        <div class="footer-links">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#que-es-ia">¿Qué es IA?</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#herramientas">Herramientas</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot">
-            <i class="fa-solid fa-laptop-code"></i>
-          </div>
-          <div class="timeline-card glass-card">
-            <span class="timeline-badge">Técnico</span>
-            <h3 class="timeline-title">Panasystem</h3>
-            <p class="timeline-desc">Formación técnica en sistemas y tecnología de la información.</p>
-            <div class="timeline-icon-big"><i class="fa-solid fa-server"></i></div>
-          </div>
+        <div class="footer-links">
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="https://chat.openai.com" target="_blank" rel="noopener noreferrer">ChatGPT</a></li>
+            <li><a href="https://gemini.google.com" target="_blank" rel="noopener noreferrer">Gemini</a></li>
+            <li><a href="https://claude.ai" target="_blank" rel="noopener noreferrer">Claude</a></li>
+            <li><a href="https://copilot.microsoft.com" target="_blank" rel="noopener noreferrer">Copilot</a></li>
+            <li><a href="https://www.canva.com" target="_blank" rel="noopener noreferrer">Canva AI</a></li>
+            <li><a href="https://www.grammarly.com" target="_blank" rel="noopener noreferrer">Grammarly</a></li>
+          </ul>
         </div>
 
-        <div class="timeline-item active-item">
-          <div class="timeline-dot pulse-dot">
-            <i class="fa-solid fa-graduation-cap"></i>
-          </div>
-          <div class="timeline-card glass-card card-active">
-            <span class="timeline-badge badge-active">En curso ✦</span>
-            <h3 class="timeline-title">Licenciatura en Sistemas y Programación</h3>
-            <p class="timeline-desc">Cursando actualmente la carrera universitaria que me prepara para ser desarrollador de software profesional.</p>
-            <div class="timeline-icon-big"><i class="fa-solid fa-code"></i></div>
+        <div class="footer-project">
+          <h4>Proyecto</h4>
+          <p>Construyendo mi Primera Web con HTML y Vibe Coding</p>
+          <div class="footer-tech-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>IA</span>
           </div>
         </div>
-
       </div>
-    </div>
-  </section>
 
-  <!-- ══════════════════════════════════════
-       CONTACTO
-  ══════════════════════════════════════ -->
-  <section class="section section-alt" id="contacto">
-    <div class="container">
-      <h2 class="section-title">
-        <span class="title-icon"><i class="fa-solid fa-satellite-dish"></i></span>
-        Contacto
-      </h2>
-      <p class="section-sub">¿Quieres conectar conmigo? Encuéntrame aquí</p>
-
-      <div class="contact-grid">
-
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/cristhian.s05?igsh=MXV3cjE1Nzk5NzAxYg%3D%3D" target="_blank" class="contact-card glass-card contact-insta">
-          <!--
-            REEMPLAZA EN VS CODE:
-            Cambia href="https://instagram.com/TU_USUARIO"
-            y el texto dentro de .contact-handle
-          -->
-          <div class="contact-card-inner">
-            <div class="contact-icon-wrap">
-              <i class="fa-brands fa-instagram contact-icon"></i>
-            </div>
-            <div class="contact-info">
-              <span class="contact-platform">Instagram</span>
-              <span class="contact-handle">@cristhian.s05</span>
-              <span class="contact-action">Ver perfil <i class="fa-solid fa-arrow-right"></i></span>
-            </div>
-          </div>
-          <div class="contact-glow"></div>
-        </a>
-
-        <!-- Email -->
-        <a href="mailto:cristhisaez@gmail.com" class="contact-card glass-card contact-email">
-          <!--
-            REEMPLAZA EN VS CODE:
-            Cambia href="mailto:TU_CORREO@gmail.com"
-            y el texto dentro de .contact-handle
-          -->
-          <div class="contact-card-inner">
-            <div class="contact-icon-wrap">
-              <i class="fa-solid fa-envelope contact-icon"></i>
-            </div>
-            <div class="contact-info">
-              <span class="contact-platform">Correo electrónico</span>
-              <span class="contact-handle">cristhisaez.com</span>
-              <span class="contact-action">Enviar mensaje <i class="fa-solid fa-arrow-right"></i></span>
-            </div>
-          </div>
-          <div class="contact-glow"></div>
-        </a>
-
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="currentYear"></span>
+          <strong>IA en la Educación</strong> — Proyecto Académico Vibe Coding.
+          Diseñado con ❤️ para la comunidad educativa.
+        </p>
+        <p class="footer-credits">
+          Equipo: Estudiantes de Lic. Sistemas y Programación. UMECIT
+        </p>
       </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-logo">
-        <span class="logo-bracket">&lt;</span>CC<span class="logo-bracket">/&gt;</span>
-      </div>
-      <p class="footer-text">Diseñado y desarrollado con ❤️ por <strong>Cristhian Castro</strong></p>
-      <p class="footer-sub">Panamá · 2025</p>
-      <div class="footer-line"></div>
-      <p class="footer-copy">© 2025 Cristhian Castro. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <!-- Script propio -->
+  <!-- Botón Volver Arriba -->
+  <button class="back-to-top" id="backToTop" aria-label="Volver al inicio de la página" title="Volver arriba">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
   <script src="script.js"></script>
 </body>
 </html>
