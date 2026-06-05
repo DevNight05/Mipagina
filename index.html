@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cristhian Castro – Desarrollador</title>
+
+  <!-- Fuente moderna desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Íconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       CANVAS: Fondo de partículas animadas
+  ══════════════════════════════════════ -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ══════════════════════════════════════
+       NAVBAR: Menú de navegación fijo
+  ══════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Logo / nombre corto -->
+      <a href="#inicio" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>CC<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <!-- Botón hamburguesa para móviles -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Links de navegación -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#inicio"        class="nav-link active">Inicio</a></li>
+        <li><a href="#sobre-mi"      class="nav-link">Sobre mí</a></li>
+        <li><a href="#entretenimiento" class="nav-link">Entretenimiento</a></li>
+        <li><a href="#estudios"      class="nav-link">Estudios</a></li>
+        <li><a href="#contacto"      class="nav-link">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       HERO: Sección principal / portada
+  ══════════════════════════════════════ -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+
+      <!-- Foto personal -->
+      <div class="hero-photo-wrapper">
+        <div class="photo-ring ring-1"></div>
+        <div class="photo-ring ring-2"></div>
+        <div class="photo-ring ring-3"></div>
+        <div class="hero-photo">
+          <!--
+            ════════════════════════════════════════
+            REEMPLAZA ESTA IMAGEN EN VS CODE:
+            Cambia src="TU_FOTO.jpg" y borra el div
+            de placeholder que está dentro del div.hero-photo
+            ════════════════════════════════════════
+          -->
+          <div class="photo-placeholder">
+           <img src="Imagen.jpeg" alt="Foto ">
+            <small>Reemplaza en VS Code</small>
+          </div>
+          <!-- Descomenta la línea de abajo y pon tu foto: -->
+          <!-- <img src="TU_FOTO.jpg" alt="Foto de Cristhian Castro" /> -->
+        </div>
+      </div>
+
+      <!-- Texto de presentación -->
+      <div class="hero-text">
+        <p class="hero-greeting">Hola, soy</p>
+        <h1 class="hero-name">Cristhian<br /><span class="name-highlight">Castro</span></h1>
+        <div class="hero-typewriter">
+          <span id="typewriter-text"></span><span class="cursor">|</span>
+        </div>
+        <p class="hero-tagline">Apasionado por la tecnología y el desarrollo de software.</p>
+        <div class="hero-buttons">
+          <a href="#sobre-mi"  class="btn btn-primary">Conóceme <i class="fa-solid fa-arrow-down"></i></a>
+          <a href="#contacto"  class="btn btn-outline">Contacto  <i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Indicador de scroll -->
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SOBRE MÍ
+  ══════════════════════════════════════ -->
+  <section class="section" id="sobre-mi">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-icon"><i class="fa-solid fa-user-astronaut"></i></span>
+        Sobre mí
+      </h2>
+      <div class="about-card glass-card">
+        <div class="about-grid">
+          <!-- Tarjetas de datos personales -->
+          <div class="about-info">
+            <div class="info-chip">
+              <i class="fa-solid fa-cake-candles chip-icon"></i>
+              <div>
+                <span class="chip-label">Edad</span>
+                <span class="chip-value">18 años</span>
+              </div>
+            </div>
+            <div class="info-chip">
+              <i class="fa-solid fa-calendar chip-icon"></i>
+              <div>
+                <span class="chip-label">Fecha de nacimiento</span>
+                <span class="chip-value">05 – 10 – 2007</span>
+              </div>
+            </div>
+            <div class="info-chip">
+              <i class="fa-solid fa-graduation-cap chip-icon"></i>
+              <div>
+                <span class="chip-label">Carrera</span>
+                <span class="chip-value">Licenciatura en Sistemas y Programación</span>
+              </div>
+            </div>
+            <div class="info-chip">
+              <i class="fa-solid fa-location-dot chip-icon"></i>
+              <div>
+                <span class="chip-label">País</span>
+                <span class="chip-value">Panamá 🇵🇦</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Párrafo biográfico -->
+          <div class="about-bio">
+            <p>
+              Tengo <strong>18 años</strong> y nací el <strong>05-10-2007</strong>. Actualmente estoy cursando
+              la <strong>Licenciatura en Sistemas y Programación</strong>.
+            </p>
+            <p>
+              Me apasiona la tecnología y el desarrollo de software. Disfruto aprender nuevas
+              herramientas, construir proyectos digitales y mejorar cada día mis habilidades
+              como programador.
+            </p>
+            <p>
+              Creo que la tecnología tiene el poder de transformar vidas, y quiero ser parte
+              de ese cambio desde Panamá hacia el mundo.
+            </p>
+            <!-- Barra de habilidades decorativa -->
+            <div class="skill-bars">
+              <div class="skill-item">
+                <span class="skill-name">HTML / CSS</span>
+                <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">JavaScript</span>
+                <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Programación</span>
+                <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       MIS ENTRETENIMIENTOS
+  ══════════════════════════════════════ -->
+  <section class="section section-alt" id="entretenimiento">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-icon"><i class="fa-solid fa-gamepad"></i></span>
+        Mis entretenimientos
+      </h2>
+      <p class="section-sub">Lo que disfruto en mi tiempo libre</p>
+
+      <div class="hobbies-grid">
+
+        <div class="hobby-card glass-card" data-delay="0">
+          <div class="hobby-icon-wrap">
+            <i class="fa-solid fa-film hobby-icon"></i>
+          </div>
+          <h3 class="hobby-title">Ver películas</h3>
+          <p class="hobby-desc">Disfruto el cine como una ventana a otros mundos, historias y culturas.</p>
+        </div>
+
+        <div class="hobby-card glass-card" data-delay="100">
+          <div class="hobby-icon-wrap">
+            <i class="fa-solid fa-torii-gate hobby-icon"></i>
+          </div>
+          <h3 class="hobby-title">Ver anime</h3>
+          <p class="hobby-desc">El anime combina animación increíble con narrativas únicas que me enganchan.</p>
+        </div>
+
+        <div class="hobby-card glass-card" data-delay="200">
+          <div class="hobby-icon-wrap">
+            <i class="fa-solid fa-gamepad hobby-icon"></i>
+          </div>
+          <h3 class="hobby-title">Videojuegos</h3>
+          <p class="hobby-desc">Los videojuegos me enseñan lógica, estrategia y trabajo en equipo.</p>
+        </div>
+
+        <div class="hobby-card glass-card" data-delay="300">
+          <div class="hobby-icon-wrap">
+            <i class="fa-solid fa-futbol hobby-icon"></i>
+          </div>
+          <h3 class="hobby-title">Jugar fútbol</h3>
+          <p class="hobby-desc">El fútbol es energía, compañerismo y la mejor forma de despejar la mente.</p>
+        </div>
+
+        <div class="hobby-card glass-card" data-delay="400">
+          <div class="hobby-icon-wrap">
+            <i class="fa-solid fa-house-heart hobby-icon"></i>
+          </div>
+          <h3 class="hobby-title">Mi familia</h3>
+          <p class="hobby-desc">Pasar tiempo con mi familia es lo que más valoro y disfruto de la vida.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       MIS ESTUDIOS
+  ══════════════════════════════════════ -->
+  <section class="section" id="estudios">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-icon"><i class="fa-solid fa-book-open"></i></span>
+        Mis estudios
+      </h2>
+      <p class="section-sub">Mi trayectoria académica</p>
+
+      <!-- Línea de tiempo educativa -->
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <i class="fa-solid fa-school"></i>
+          </div>
+          <div class="timeline-card glass-card">
+            <span class="timeline-badge">Primaria</span>
+            <h3 class="timeline-title">Nicanor Villalaz</h3>
+            <p class="timeline-desc">Educación primaria donde comenzó mi formación académica y personal.</p>
+            <div class="timeline-icon-big"><i class="fa-solid fa-child"></i></div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+          <div class="timeline-card glass-card">
+            <span class="timeline-badge">Secundaria</span>
+            <h3 class="timeline-title">Instituto Coronel Segundo Villarreal</h3>
+            <p class="timeline-desc">Bachillerato donde desarrollé habilidades analíticas y disciplina académica.</p>
+            <div class="timeline-icon-big"><i class="fa-solid fa-user-graduate"></i></div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <div class="timeline-card glass-card">
+            <span class="timeline-badge">Técnico</span>
+            <h3 class="timeline-title">Panasystem</h3>
+            <p class="timeline-desc">Formación técnica en sistemas y tecnología de la información.</p>
+            <div class="timeline-icon-big"><i class="fa-solid fa-server"></i></div>
+          </div>
+        </div>
+
+        <div class="timeline-item active-item">
+          <div class="timeline-dot pulse-dot">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="timeline-card glass-card card-active">
+            <span class="timeline-badge badge-active">En curso ✦</span>
+            <h3 class="timeline-title">Licenciatura en Sistemas y Programación</h3>
+            <p class="timeline-desc">Cursando actualmente la carrera universitaria que me prepara para ser desarrollador de software profesional.</p>
+            <div class="timeline-icon-big"><i class="fa-solid fa-code"></i></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CONTACTO
+  ══════════════════════════════════════ -->
+  <section class="section section-alt" id="contacto">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-icon"><i class="fa-solid fa-satellite-dish"></i></span>
+        Contacto
+      </h2>
+      <p class="section-sub">¿Quieres conectar conmigo? Encuéntrame aquí</p>
+
+      <div class="contact-grid">
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/cristhian.s05?igsh=MXV3cjE1Nzk5NzAxYg%3D%3D" target="_blank" class="contact-card glass-card contact-insta">
+          <!--
+            REEMPLAZA EN VS CODE:
+            Cambia href="https://instagram.com/TU_USUARIO"
+            y el texto dentro de .contact-handle
+          -->
+          <div class="contact-card-inner">
+            <div class="contact-icon-wrap">
+              <i class="fa-brands fa-instagram contact-icon"></i>
+            </div>
+            <div class="contact-info">
+              <span class="contact-platform">Instagram</span>
+              <span class="contact-handle">@cristhian.s05</span>
+              <span class="contact-action">Ver perfil <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+          <div class="contact-glow"></div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:cristhisaez@gmail.com" class="contact-card glass-card contact-email">
+          <!--
+            REEMPLAZA EN VS CODE:
+            Cambia href="mailto:TU_CORREO@gmail.com"
+            y el texto dentro de .contact-handle
+          -->
+          <div class="contact-card-inner">
+            <div class="contact-icon-wrap">
+              <i class="fa-solid fa-envelope contact-icon"></i>
+            </div>
+            <div class="contact-info">
+              <span class="contact-platform">Correo electrónico</span>
+              <span class="contact-handle">cristhisaez.com</span>
+              <span class="contact-action">Enviar mensaje <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+          <div class="contact-glow"></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>CC<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-text">Diseñado y desarrollado con ❤️ por <strong>Cristhian Castro</strong></p>
+      <p class="footer-sub">Panamá · 2025</p>
+      <div class="footer-line"></div>
+      <p class="footer-copy">© 2025 Cristhian Castro. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Script propio -->
+  <script src="script.js"></script>
+</body>
+</html>
